@@ -5,4 +5,5 @@
 - Add tailwind support
 - Add scss support
 - Add cypress tests
+- Add babel support
 
