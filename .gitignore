@@ -1,0 +1,5 @@
+*.swp
+.DS_Store
+/__sapper__/
+/node_modules/
+/src/node_modules/@sapper/

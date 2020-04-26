@@ -1,0 +1,48 @@
+{
+  "name": "TODO",
+  "description": "TODO",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "sapper dev --output node_modules/@sapper",
+    "lint": "npx eslint . --ext js,svelte",
+    "build": "sapper build --legacy --output node_modules/@sapper",
+    "export": "sapper export --legacy --output node_modules/@sapper",
+    "dynamic": "node __sapper__/build",
+    "static": "npx serve __sapper__/export",
+    "nuke": "rm -fr node_modules __sapper__ package-lock.json",
+    "start": "npm run dynamic"
+  },
+  "dependencies": {
+    "compression": "^1.0.0",
+    "polka": "next",
+    "sirv": "^0.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@rollup/plugin-commonjs": "11.0.x",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-replace": "^2.0.0",
+    "eslint": "^6.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "rollup": "^1.0.0",
+    "rollup-plugin-babel": "^4.0.0",
+    "rollup-plugin-svelte": "^5.0.0",
+    "rollup-plugin-terser": "^5.0.0",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0"
+  },
+  "bundledDependencies": {
+    "@sapper/app": "",
+    "@sapper/server": "",
+    "@sapper/service-worker": ""
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
