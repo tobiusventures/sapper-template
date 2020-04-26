@@ -14,16 +14,18 @@ This is the modified version of the original [Rollup Sapper Template](https://gi
 
 _Note: For further planned changes see the [TODO](TODO) list._
 
-### Clone
+### Copy
 
-Use `degit` to clone this template repo for use on your own projects.
+Use `degit` to copy this template repo to your machine for use as a new project.
 
 ```zsh
 [~] npm i -g degit
 [~] degit tobiusventures/sapper-template sapper
+[~] vi README.md LICENSE
+[~] git init
 ```
 
-### Setup
+### Install
 
 Everything needed to build this project is available as a Node dependency.
 
