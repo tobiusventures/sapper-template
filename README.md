@@ -12,7 +12,7 @@ This is the modified version of the original [Rollup Sapper Template](https://gi
 - Simplify __npm run__ workflow and command names (see below)
 - Normalize __package.json__ dependency versions for "safe" updates (see __semver__)
 
-_Note: For further planned changes see the [TODO](TODO) list._
+_Note: For further planned changes see the [TODO](TODO.md) list._
 
 ### Copy
 
@@ -71,7 +71,7 @@ Choose the desired workflow step (`dynamic` or `static`) and re-alias the `start
 
 ### Supporting Links
 
-- [macOS dev setup](https://github.com/tobiusventures/macos-dev-setup)
+- [dev setup instructions (macOS)](https://github.com/tobiusventures/macos-dev-setup)
 - [svelte docs](https://svelte.dev/)
 - [sapper docs](https://sapper.svelte.dev/)
 - [tailwind docs](https://tailwindcss.com/docs/installation/)
