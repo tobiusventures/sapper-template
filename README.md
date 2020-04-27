@@ -1,18 +1,20 @@
 
 # Sapper Template
 
-This is the modified version of the original [Rollup Sapper Template](https://github.com/sveltejs/sapper-template-rollup) that we use to create new Sapper website applications. Some of the changes include:
+This is a modified version of the original [Rollup Sapper Template](https://github.com/sveltejs/sapper-template-rollup) meant to support the way in which we build Sapper website applications on Tobius Ventures projects.
 
-- Use __editorconfig__ for file consistency (e.g. 2-spaces instead of tabs)
-- Use __eslint__ to support the __airbnb__ style guide (99% of it anyway)
-- Use __gitattributes__ to normalize cross-os line endings (pre git commit)
-- Use __node_modules__ instead of __src/node_modules__ for Sapper build artifacts
-- Use __nvmrc__ to support Node version consistency across dev environments
-- Remove __cypress__ support (temporary, still evaluating)
-- Simplify __npm run__ workflow and command names (see below)
-- Normalize __package.json__ dependency versions for "safe" updates (see __semver__)
+Some of the key differences are:
 
-_Note: For further planned changes see the [TODO](TODO.md) list._
+- Uses __editorconfig__ for file consistency (e.g. 2-spaces instead of tabs)
+- Uses __eslint__ to support the __airbnb__ style guide (99% of it anyway)
+- Uses __gitattributes__ to normalize cross-os line endings (pre-commit git hooks)
+- Uses __node_modules__ instead of __src/node_modules__ for Sapper build artifacts
+- Uses __nvmrc__ to support Node version consistency across dev environments
+- Removes __cypress__ support (this is likely temporary, we are still evaluating)
+- Normalizes __package.json__ dependency versions for "safe" updates (see __semver__)
+- Simplifies the __npm run__ workflow commands (see below)
+
+_For further planned changes see the [TODO](TODO.md) list._
 
 ### Copy
 
