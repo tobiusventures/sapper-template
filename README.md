@@ -1,7 +1,7 @@
 
 # Sapper Template
 
-This is a modified version of the original [Rollup Sapper Template](https://github.com/sveltejs/sapper-template-rollup) meant to support the way in which we build Sapper website applications on Tobius Ventures projects.
+This is the modified version of the original [Rollup Sapper Template](https://github.com/sveltejs/sapper-template-rollup) that we use to build Sapper website applications on new projects.
 
 Some of the key differences are:
 
