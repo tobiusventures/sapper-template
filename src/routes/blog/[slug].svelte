@@ -25,10 +25,9 @@
      so we have to use the :global(...) modifier to target
        all elements inside .content
    */
-.content :global(h2) {
-  font-size: 1.4em;
-  font-weight: 500;
-}
+  .content :global(h2) {
+    @apply text-2xl font-medium;
+  }
 
   .content :global(pre) {
     background-color: #f9f9f9;

@@ -5,11 +5,21 @@ import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup';
+import sveltePreprocess from 'svelte-preprocess';
+import tailwindcss from 'tailwindcss';
 import pkg from './package.json';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+
+const preprocess = sveltePreprocess({
+  postcss: {
+    plugins: [
+      tailwindcss,
+    ],
+  },
+});
 
 export default {
   client: {
@@ -24,6 +34,7 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
+        preprocess,
       }),
       resolve({
         browser: true,
@@ -65,6 +76,7 @@ export default {
       svelte({
         generate: 'ssr',
         dev,
+        preprocess,
       }),
       resolve({
         dedupe: ['svelte'],

@@ -6,22 +6,20 @@
 
 <style>
   h1, p {
-    margin: 0 auto;
+    @apply mx-auto my-0;
   }
 
   h1 {
-    font-size: 2.8em;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
+    @apply mt-0 mx-0 mb-2 text-5xl font-bold;
   }
 
   p {
-    margin: 1em auto;
+    @apply mx-auto my-4;
   }
 
-  @media (min-width: 480px) {
+  @screen sm {
     h1 {
-      font-size: 4em;
+      @apply text-6xl;
     }
   }
 </style>

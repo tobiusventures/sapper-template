@@ -1,12 +1,10 @@
 
 # Sapper Template Todo
 
-- Add global tailwind support
-- Add scss support (node-sass)
 - Add css nesting support (postcss-nested)
 - Add autoprefixer support
 - Add eslint pre-commit git hook support
-- Add eslint watch support
+- Add eslint watch support ???
 - Add dotenv support
 - Add heroku support
 - Add cypress tests

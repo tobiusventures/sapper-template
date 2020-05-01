@@ -1,33 +1,27 @@
 <style>
   h1, figure, p {
-    text-align: center;
-    margin: 0 auto;
+    @apply text-center mx-auto my-0;
   }
 
   h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
+    @apply text-5xl uppercase font-bold mt-0 mx-0 mb-2;
   }
 
   figure {
-    margin: 0 0 1em 0;
+    @apply mt-0 mx-0 mb-4;
   }
 
   img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
+    @apply w-full max-w-sm mt-0 mx-0 mb-4;
   }
 
   p {
-    margin: 1em auto;
+    @apply my-4 mx-auto;
   }
 
-  @media (min-width: 480px) {
+  @screen sm {
     h1 {
-      font-size: 4em;
+      @apply text-6xl;
     }
   }
 </style>
