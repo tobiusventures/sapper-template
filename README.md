@@ -7,6 +7,7 @@ Some of the key differences are:
 
 - Uses __editorconfig__ for file consistency (e.g. 2-spaces instead of tabs)
 - Uses __eslint__ to support the __airbnb__ style guide (99% of it anyway)
+- Uses __husky__ git hooks to prevent any code pushes that have unresolved linting errors
 - Uses __gitattributes__ to normalize cross-os line endings (pre-commit git hooks)
 - Uses __node_modules__ instead of __src/node_modules__ for Sapper build artifacts
 - Uses __nvmrc__ to support Node version consistency across dev environments
