@@ -13,7 +13,7 @@ Some of the key differences are:
 - Removes __cypress__ support (this is likely temporary, we are still evaluating)
 - Normalizes __package.json__ dependency versions for "safe" updates (see __semver__)
 - Simplifies the __npm run__ workflow commands (see below)
-- Adds global support for __tailwind__ and demonstrates it's usage
+- Adds global support for __tailwindcss__ and demonstrates usage throughout
 
 _For further planned changes see the [TODO](TODO.md) list._
 
