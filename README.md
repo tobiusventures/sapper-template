@@ -66,8 +66,11 @@ Use the `export` &#8594;	`static` workflow in production if you're building a `s
 Choose the desired workflow step (`dynamic` or `static`) and re-alias the `start` command appropriately.
 
 ```zsh
+[~] npm ci
 [~] npm start
 ```
+
+_Note: `npm ci` uses `package-lock.json` whereas `npm i` uses `package.json`._
 
 ### License
 
