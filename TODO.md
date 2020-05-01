@@ -3,7 +3,6 @@
 
 - Add css nesting support (postcss-nested)
 - Add autoprefixer support
-- Add eslint pre-commit git hook support
 - Add eslint watch support ???
 - Add dotenv support
 - Add heroku support
