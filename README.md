@@ -39,7 +39,7 @@ Everything needed to build this project is available as a Node dependency.
 
 ### Development
 
-File changes will automatically trigger the browser to reload. Watch the terminal console for lint and compile errors. Watch the browser console for Website application errors.
+File changes will automatically trigger the browser to reload. Watch the terminal console for compile errors. Watch the browser console for Website application errors.
 
 ```zsh
 [~] npm run dev
