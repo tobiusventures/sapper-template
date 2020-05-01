@@ -35,8 +35,10 @@ Everything needed to build this project is available as a Node dependency.
 
 ```zsh
 [~] nvm use
-[~] npm i
+[~] npm ci
 ```
+
+_Note: `npm ci` uses `package-lock.json` whereas `npm i` uses `package.json` (only use `npm i` if you are actively upgrading packages)._
 
 ### Development
 
@@ -69,8 +71,6 @@ Choose the desired workflow step (`dynamic` or `static`) and re-alias the `start
 [~] npm ci
 [~] npm start
 ```
-
-_Note: `npm ci` uses `package-lock.json` whereas `npm i` uses `package.json`._
 
 ### License
 

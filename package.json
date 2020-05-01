@@ -9,7 +9,7 @@
     "export": "sapper export --legacy --output node_modules/@sapper",
     "dynamic": "node __sapper__/build",
     "static": "npx serve __sapper__/export",
-    "nuke": "rm -fr node_modules __sapper__ package-lock.json",
+    "nuke": "rm -fr node_modules __sapper__",
     "start": "npm run dynamic"
   },
   "husky": {
