@@ -11,6 +11,7 @@ Some of the key differences are:
 - Uses __gitattributes__ to normalize cross-os line endings (pre-commit git hooks)
 - Uses __node_modules__ instead of __src/node_modules__ for Sapper build artifacts
 - Uses __nvmrc__ to support Node version consistency across dev environments
+- Uses __dotenv__ to support user-defined environment variables
 - Removes __cypress__ support (this is likely temporary, we are still evaluating)
 - Normalizes __package.json__ dependency versions for "safe" updates (see __semver__)
 - Simplifies the __npm run__ workflow commands (see below)
