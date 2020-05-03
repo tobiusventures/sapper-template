@@ -36,6 +36,7 @@ Everything needed to build this project is available as a Node dependency.
 ```zsh
 [~] nvm use
 [~] npm ci
+[~] cp .env-example .env && vi .env
 ```
 
 _Note: `npm ci` uses `package-lock.json` whereas `npm i` uses `package.json` (only use `npm i` if you are actively upgrading packages)._
