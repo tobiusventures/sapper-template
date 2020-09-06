@@ -1,4 +1,3 @@
-
 module.exports = {
   env: {
     browser: true,
@@ -14,7 +13,7 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 2019,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['svelte3'],
   rules: {
@@ -23,8 +22,8 @@ module.exports = {
     'no-restricted-syntax': ['error', 'ForInStatement'],
     'no-param-reassign': ['error', { props: false }],
 
-		// mac/windows equalizer (see .gitattributes for real fix)
-		'linebreak-style': 0,
+    // mac/windows equalizer (see .gitattributes for real fix)
+    'linebreak-style': 0,
 
     // svelte is not standard javascript
     'import/no-mutable-exports': 0,
@@ -32,4 +31,3 @@ module.exports = {
     'no-multiple-empty-lines': [2, { max: 2, maxBOF: 2, maxEOF: 2 }],
   },
 };
-

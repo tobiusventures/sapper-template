@@ -1,77 +1,79 @@
-
 # Sapper Template
 
-This is the modified version of the original [Rollup Sapper Template](https://github.com/sveltejs/sapper-template-rollup) that we use to build Sapper website applications on new projects.
+This is the modified [Rollup Sapper Template](https://github.com/sveltejs/sapper-template-rollup) that we use at [Tobius Ventures](https://www.tobius.com) to build new Sapper website applications.
 
-Some of the key differences are:
+Some key differences include:
 
-- Uses __editorconfig__ for file consistency (e.g. 2-spaces instead of tabs)
-- Uses __eslint__ to support the __airbnb__ style guide (99% of it anyway)
-- Uses __husky__ and __eslint__ to catch unresolved linting errors (pre-push git hooks)
-- Uses __gitattributes__ to normalize cross-os line endings (pre-commit git hooks)
-- Uses __node_modules__ instead of __src/node_modules__ for Sapper build artifacts
-- Uses __nvmrc__ to support Node version consistency across dev environments
-- Uses __dotenv__ to support user-defined environment variables
-- Removes __cypress__ support (this is likely temporary, we are still evaluating)
-- Normalizes __package.json__ dependency versions for "safe" updates (see __semver__)
-- Simplifies the __npm run__ workflow commands (see below)
-- Adds global support for __tailwindcss__ and demonstrates usage throughout
+- We use __editorconfig__ for file consistency (e.g. 2-spaces instead of tabs)
+- We use __eslint__ to help us adhere to the __airbnb__ style guide (99% of it anyway)
+- We use __husky__ and __eslint__ to catch unresolved linting errors (git push hook)
+- We use __.gitattributes__ to normalize Multi-OS (Windows/MacOS/Linux) line endings (git push hook)
+- We write Sapper build artifacts to __node_modules__ instead of __src/node_modules__
+- We use __.nvmrc__ to keep Node versions consistent across environments
+- We use __dotenv__ to remain environment agnostic (through user-defined env vars)
+- We removed __cypress__ support (we are re-evaluating e2e solutions .. because cypress is heavy)
+- We normalized most of the __package.json__ dependency versions (for "safer" __semver__ auto-updates)
+- We use a less obscure set of __npm run__ workflow commands (__dev__/__dynamic__/__static__)
+- We use __tailwindcss__ as our styling framework of choice (which is globally implemented)
 
-_For further planned changes see the [TODO](TODO.md) list._
+_Please see the [TODO](TODO.md) list for future plans._
 
 ### Copy
 
-Use `degit` to copy this template repo to your machine for use as a new project.
+Use `degit` to copy this template repo to your machine to use as the baseline for a new project.
 
 ```zsh
-[~] npm i -g degit
-[~] degit tobiusventures/sapper-template sapper
-[~] vi README.md LICENSE
+[~] mkdir project
+[~] npm i degit
+[~] npx degit tobiusventures/sapper-template .
 [~] git init
+[~] less README.md
 ```
 
-### Install
+### Setup
 
-Everything needed to build this project is available as a Node dependency.
+Everything needed to create a new project from this code will be installed as a Node dependency.
 
 ```zsh
 [~] nvm use
-[~] npm ci
 [~] cp .env-example .env && vi .env
+[~] npm ci
 ```
 
-_Note: `npm ci` uses `package-lock.json` whereas `npm i` uses `package.json` (only use `npm i` if you are actively upgrading packages)._
+### Development Mode
 
-### Development
-
-File changes will automatically trigger the browser to reload. Watch the terminal console for compile errors. Watch the browser console for Website application errors.
+File changes will automatically trigger the browser to reload in `dev` mode. Watch the terminal console for compile errors. Watch the browser console for Website application errors.
 
 ```zsh
 [~] npm run dev
 [~] open http://localhost:3000
 ```
 
-### Production
+_Important! `npm run lint` will fail if you do not test `dynamic` or `build` mode before pushing your git changes, so don't be lazy._
 
-Use the `build` &#8594;	`dynamic` workflow in production if you're building a `dynamic` server-side Node app.
+### Dynamic Mode
+
+Use `dynamic` mode to test your dynamic `dev` mode application (live Node.js + static assets) before deploying changes to a production environment.
 
 ```zsh
-[~] npm run build
 [~] npm run dynamic
 ```
 
-Use the `export` &#8594;	`static` workflow in production if you're building a `static` client-side Web app.
+### Static Mode
+
+Use `static` mode to test your static `dev` mode application (static assets only) before deploying changes to production.
 
 ```zsh
-[~] npm run export
 [~] npm run static
 ```
 
-Choose the desired workflow step (`dynamic` or `static`) and re-alias the `start` command appropriately.
+### Production
+
+Remap `build` and `start` (inside package.json) to either of the `buildDynamic` and `startDynamic` OR the `buildStatic` and `startStatic` commands. Then your CI/CD solution can be configured to run:
 
 ```zsh
-[~] npm ci
-[~] npm start
+[~] npm run build
+[~] npm run start
 ```
 
 ### License
@@ -92,4 +94,3 @@ Choose the desired workflow step (`dynamic` or `static`) and re-alias the `start
 - [degit command](https://www.npmjs.com/package/degit)
 - [semver 2.0.0 specification](https://semver.org/)
 - [npm semver implementation](https://www.npmjs.com/package/semver)
-
