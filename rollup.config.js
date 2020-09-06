@@ -1,8 +1,9 @@
+import { builtinModules } from 'module';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup';
 import sveltePreprocess from 'svelte-preprocess';
@@ -12,6 +13,10 @@ import pkg from './package.json';
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+
+const onwarn = (warning, callback) => (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message))
+  || (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message))
+  || callback(warning);
 
 const preprocess = sveltePreprocess({
   postcss: {
@@ -44,7 +49,7 @@ export default {
 
       legacy && babel({
         extensions: ['.js', '.mjs', '.html', '.svelte'],
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
         exclude: ['node_modules/@babel/**'],
         presets: [
           ['@babel/preset-env', {
@@ -63,6 +68,8 @@ export default {
         module: true,
       }),
     ],
+    preserveEntrySignatures: false,
+    onwarn,
   },
 
   server: {
@@ -75,6 +82,7 @@ export default {
       }),
       svelte({
         generate: 'ssr',
+        hydratable: true,
         dev,
         preprocess,
       }),
@@ -83,10 +91,15 @@ export default {
       }),
       commonjs(),
     ],
-    external: Object.keys(pkg.dependencies).concat(
-      // eslint-disable-next-line global-require
-      require('module').builtinModules || Object.keys(process.binding('natives')),
+    external: [].concat(
+      Object.keys(pkg.dependencies),
+      // Warning!
+      // Attempts to include devDependencies caused the following error:
+      // Error: Function called outside component initialization
+      builtinModules,
     ),
+    preserveEntrySignatures: 'strict',
+    onwarn,
   },
 
   serviceworker: {
@@ -101,5 +114,7 @@ export default {
       commonjs(),
       !dev && terser(),
     ],
+    preserveEntrySignatures: false,
+    onwarn,
   },
 };
