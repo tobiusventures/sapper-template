@@ -49,6 +49,8 @@ File changes will automatically trigger the browser to reload in `dev` mode. Wat
 [~] open http://localhost:3000
 ```
 
+_Important! `npm run lint` will fail if you do not test `dynamic` or `build` mode before pushing your git changes, so don't be lazy._
+
 ### Dynamic Mode
 
 Use `dynamic` mode to test your dynamic `dev` mode application (live Node.js + static assets) before deploying changes to a production environment.
